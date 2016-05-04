@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/setting_device" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:text="@string/bind_title"
+        android:textColor="@color/black_000000"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/setting_device_icon" />
+
+    <TextView
+        android:id="@+id/tv_setting_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="15dp"
+        android:paddingLeft="34dp"
+        android:paddingRight="34dp"
+        android:paddingTop="15dp"
+        android:text="@string/setting_next"
+        android:textColor="@color/black_000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_setting_pre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="15dp"
+        android:paddingLeft="34dp"
+        android:paddingRight="34dp"
+        android:paddingTop="15dp"
+        android:text="@string/setting_pre"
+        android:textColor="@color/black_000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_syn_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_setting_pre"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="@string/syn_tips"
+        android:textColor="@color/black_000000" />
+
+    <ListView
+        android:id="@+id/lv_setting_device"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tv_syn_tips"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="220dp"
+        android:divider="@color/white_fdfdfd"
+        android:dividerHeight="1dp" >
+    </ListView>
+
+</RelativeLayout>

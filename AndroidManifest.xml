@@ -1,0 +1,172 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.blestep.sportsbracelet"
+    android:versionCode="11"
+    android:versionName="1.0.10" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!-- SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 向SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 按时required为true时，则应用只能在支持BLE的Android设备上安装运行；required为false时，Android设备均可正常安装运行 -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name="BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name=".activity.SplashActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SettingBluetoothActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.SettingBraceletActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.SettingDeviceActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.SettingUserInfoActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.SettingTargetActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.StepActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.ClearDataActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.TargetActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.PhoneComingActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.AlarmActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.AlarmEditActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.AlarmAddActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.BindDeviceActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.AboutActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".activity.HistoryActivity"
+            android:configChanges="orientation|mcc|mnc|keyboard|keyboardHidden|locale|touchscreen|navigation|fontScale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+
+        <service android:name=".service.BTService" >
+        </service>
+
+        <receiver android:name=".receiver.PhoneStateReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.SmsStateReceiver" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="56a5ea0a67e58e80f8000aa3" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="googleplay" />
+    </application>
+
+</manifest>
