@@ -30,7 +30,7 @@ import android.graphics.Region;
 import android.graphics.Shader;
 import android.util.AttributeSet;
 
-import com.blestep.sportsbracelet.R;
+import com.blestep.footballlife.R;
 import com.db.chart.model.ChartEntry;
 import com.db.chart.model.ChartSet;
 import com.db.chart.model.LineSet;

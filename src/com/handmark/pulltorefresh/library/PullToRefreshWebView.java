@@ -25,7 +25,7 @@ import android.util.FloatMath;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import com.blestep.sportsbracelet.R;
+import com.blestep.footballlife.R;
 
 public class PullToRefreshWebView extends PullToRefreshBase<WebView> {
 

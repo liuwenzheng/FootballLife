@@ -22,7 +22,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint.Align;
 
-import com.blestep.sportsbracelet.R;
+import com.blestep.footballlife.R;
 
 /**
  * Class responsible to control horizontal measures, positions, yadda yadda. If

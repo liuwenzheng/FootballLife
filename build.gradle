@@ -1,17 +1,19 @@
 apply plugin: 'com.android.application'
 
 buildscript {
-    repositories {
-        jcenter()
+    allprojects {
+        repositories {
+            jcenter()
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'com.android.tools.build:gradle:2.1.0'
     }
 }
-apply plugin: 'android'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
+    compile 'com.jakewharton:butterknife:7.0.1'
 }
 
 android {
@@ -32,5 +34,18 @@ android {
             abortOnError false
         }
     }
-
+    signingConfigs {
+        release {
+            keyAlias 'footballlife'
+            keyPassword 'moko123456'
+            storeFile file('D:\\AndroidStudioProjects\\FootballLife\\keystore\\footballlife.jks')
+            storePassword 'moko123456'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
 }

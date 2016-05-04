@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 
-import com.blestep.sportsbracelet.R;
+import com.blestep.footballlife.R;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 public class SlidingActivityHelper {

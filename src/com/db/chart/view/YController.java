@@ -23,7 +23,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint.Align;
 import android.util.Log;
 
-import com.blestep.sportsbracelet.R;
+import com.blestep.footballlife.R;
 import com.db.chart.exception.ChartException;
 import com.db.chart.model.ChartSet;
 

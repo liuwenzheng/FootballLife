@@ -35,8 +35,7 @@ import android.view.View;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.RelativeLayout;
 
-import com.blestep.sportsbracelet.R;
-import com.blestep.sportsbracelet.utils.Utils;
+import com.blestep.footballlife.R;
 import com.db.chart.Tools;
 import com.db.chart.exception.ChartException;
 import com.db.chart.listener.OnEntryClickListener;

@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <com.blestep.sportsbracelet.view.CircleProgressView
+        <com.blestep.footballlife.view.CircleProgressView
             android:id="@+id/circleView"
             android:layout_width="300dp"
             android:layout_height="wrap_content"

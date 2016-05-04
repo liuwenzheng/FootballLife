@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 
-import com.blestep.sportsbracelet.R;
+import com.blestep.footballlife.R;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
 public class PullToRefreshViewPager extends PullToRefreshBase<ViewPager> {

@@ -27,7 +27,7 @@ import android.graphics.RectF;
 import android.graphics.Region;
 import android.util.AttributeSet;
 
-import com.blestep.sportsbracelet.R;
+import com.blestep.footballlife.R;
 import com.db.chart.model.Bar;
 import com.db.chart.model.BarSet;
 import com.db.chart.model.ChartSet;
