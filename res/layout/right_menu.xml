@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black_484848"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
@@ -34,116 +34,359 @@
         android:scaleType="fitCenter"
         android:src="@drawable/pic_male" />
 
-    <RelativeLayout
-        android:id="@+id/rl_center_userinfo"
+    <View
+        style="@style/divider_line"
+        android:layout_marginTop="33dp" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:paddingBottom="13dp"
-        android:paddingLeft="17dp"
-        android:paddingRight="17dp"
-        android:paddingTop="13dp" >
+        android:layout_height="0dp"
+        android:layout_weight="1.0">
 
-        <TextView
-            android:id="@+id/tv_center_info"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/center_info"
-            android:textColor="@color/white_ffffff"
-            android:textSize="18sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_center_info"
-            android:layout_marginTop="6dp"
-            android:text="@string/center_info_tips"
-            android:textColor="@color/grey_979797"
-            android:textSize="12sp" />
+            <RelativeLayout
+                android:id="@+id/rl_center_userinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/go" />
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_center_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_info"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
 
-    <View style="@style/divider_line" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_info"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_info_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
 
-    <RelativeLayout
-        android:id="@+id/rl_center_target"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="13dp"
-        android:paddingLeft="17dp"
-        android:paddingRight="17dp"
-        android:paddingTop="13dp" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tv_center_target"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/center_target"
-            android:textColor="@color/white_ffffff"
-            android:textSize="18sp" />
+            <View
+                style="@style/divider_line"
+                android:visibility="gone" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_center_target"
-            android:layout_marginTop="6dp"
-            android:text="@string/center_target_tips"
-            android:textColor="@color/grey_979797"
-            android:textSize="12sp" />
+            <RelativeLayout
+                android:id="@+id/rl_center_target"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp"
+                android:visibility="gone">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/go" />
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_center_target"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_target"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
 
-    <View style="@style/divider_line" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_target"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_target_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
 
-    <RelativeLayout
-        android:id="@+id/rl_center_clear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="13dp"
-        android:paddingLeft="17dp"
-        android:paddingRight="17dp"
-        android:paddingTop="13dp" >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tv_center_clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/center_clear"
-            android:textColor="@color/white_ffffff"
-            android:textSize="18sp" />
+            <View
+                style="@style/divider_line"
+                android:visibility="gone" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_center_clear"
-            android:layout_marginTop="6dp"
-            android:text="@string/center_clear_tips"
-            android:textColor="@color/grey_979797"
-            android:textSize="12sp" />
+            <RelativeLayout
+                android:id="@+id/rl_center_clear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp"
+                android:visibility="gone">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/go" />
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_center_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_clear"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
 
-    <View style="@style/divider_line" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_clear"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_clear_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_center_body_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/tv_center_body_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_body_data"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_body_data"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_body_data_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_center_local_match"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/tv_center_local_match"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_local_match"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_local_match"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_local_match_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_center_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/tv_center_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_news"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_news"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_news_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_center_store"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/tv_center_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_store"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_store"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_store_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_center_wonder_collection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/tv_center_wonder_collection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_wonder_collection"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_wonder_collection"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_wonder_collection_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_center_competition_live"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="13dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:paddingTop="13dp">
+
+                <TextView
+                    android:id="@+id/tv_center_competition_live"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/center_competition_live"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_center_competition_live"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/center_competition_live_tips"
+                    android:textColor="@color/grey_979797"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/go" />
+            </RelativeLayout>
+
+            <View style="@style/divider_line" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
