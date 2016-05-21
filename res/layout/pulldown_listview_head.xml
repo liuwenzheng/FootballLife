@@ -8,7 +8,7 @@
   android:layout_height="wrap_content"
   android:background="#ffffff"
  >
-  
+
   <!-- 内容 -->
   <RelativeLayout
   android:layout_width="fill_parent"
@@ -16,7 +16,7 @@
   android:id="@+id/head_contentLayout"
   android:paddingLeft="30dp"
   >
-  
+
   <!-- 箭头图像、进度条 -->
   <FrameLayout
   android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
   android:layout_alignParentLeft="true"
   android:layout_centerVertical="true"
   >
-  
+
   <!-- 箭头 -->
   <ImageView
   android:layout_width="35dp"
@@ -33,7 +33,7 @@
   android:src="@drawable/pulldown_arrow_down"
   android:id="@+id/head_arrowImageView"
   />
-  
+
   <!-- 进度条 -->
   <ProgressBar
   android:layout_width="wrap_content"
@@ -41,10 +41,10 @@
   style="?android:attr/progressBarStyleSmall"
   android:layout_gravity="center"
   android:id="@+id/head_progressBar"
-  
+
   android:visibility="gone"
   />
-  
+
   </FrameLayout>
   
   <!-- 提示、最近更新 -->
@@ -55,7 +55,7 @@
   android:orientation="vertical"
   android:gravity="center_horizontal"
   >
-  
+
   <!-- 提示 -->
   <TextView
   android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
   android:textSize="15dp"
   android:id="@+id/head_tipsTextView"
   />
-  
+
   <!-- 最近更新 -->
   <TextView
   android:layout_width="wrap_content"
@@ -73,11 +73,11 @@
   android:text="上次更新"
   android:textSize="12dp"
   />
-  
+
   </LinearLayout>
-  
-  
+
+
   </RelativeLayout>
-  
-  
+
+
 </LinearLayout>

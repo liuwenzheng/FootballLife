@@ -43,7 +43,7 @@ public class SettingBluetoothActivity extends BaseActivity implements
 			if (!BTModule.isBluetoothOpen()) {
 				BTModule.openBluetooth(SettingBluetoothActivity.this);
 			} else {
-				startActivity(new Intent(this, SettingBraceletActivity.class));
+				startActivity(new Intent(this, SettingDeviceActivity.class));
 				this.finish();
 			}
 			break;

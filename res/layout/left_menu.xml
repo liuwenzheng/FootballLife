@@ -325,4 +325,22 @@
 
     <View style="@style/divider_line" />
 
+    <RelativeLayout
+        android:id="@+id/rl_param"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置速度参数"
+            android:textColor="@color/white_ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <View style="@style/divider_line" />
 </LinearLayout>

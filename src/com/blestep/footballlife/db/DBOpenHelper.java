@@ -55,7 +55,11 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 			// 距离
 			+ DBConstants.STEP_FIELD_DISTANCE + " TEXT,"
 			// 卡路里
-			+ DBConstants.STEP_FIELD_CALORIES + " TEXT);";
+			+ DBConstants.STEP_FIELD_CALORIES + " TEXT,"
+			// 速度
+			+ DBConstants.STEP_FIELD_SPEED + " TEXT,"
+			// 力量
+			+ DBConstants.STEP_FIELD_POWER + " TEXT);";
 
 	// // 睡眠表
 	// private static final String sleep_creat_sql = "CREATE TABLE "

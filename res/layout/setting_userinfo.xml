@@ -1,50 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/setting_userinfo" >
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_setting_userinfo_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
-        android:background="@null"
-        android:hint="@string/setting_userinfo_name_hint"
-        android:textColor="@color/black_000000"
-        android:textSize="18sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/setting_userinfo_header_bg">
 
-    <ImageView
-        android:id="@+id/iv_setting_userinfo_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/et_setting_userinfo_name"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/setting_userinfo_icon" />
+        <ImageView
+            android:id="@+id/id_iv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/center_info"
+            android:textColor="@color/black_333333"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/iv_setting_userinfo_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pic_male" />
+
+        <EditText
+            android:id="@+id/et_setting_userinfo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@null"
+            android:hint="@string/setting_userinfo_name_hint"
+            android:textColor="@color/black_333333"
+            android:textColorHint="@color/black_333333"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/iv_setting_userinfo_icon"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginTop="40dp"
-        android:orientation="vertical" >
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1.0"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1.0"
                 android:text="@string/setting_userinfo_sex"
-                android:textColor="@color/black_000000"
+                android:textColor="@color/grey_666666"
                 android:textSize="18sp" />
 
             <RadioGroup
@@ -52,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rb_setting_userinfo_male"
@@ -65,51 +91,53 @@
                     android:id="@+id/rb_setting_userinfo_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="40dp"
                     android:button="@drawable/setting_userinfo_female"
                     android:tag="1" />
             </RadioGroup>
         </LinearLayout>
 
+        <View style="@style/divider_line" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_height="50dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1.0"
                 android:text="@string/setting_userinfo_birthday"
-                android:textColor="@color/black_000000"
+                android:textColor="@color/grey_666666"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tv_setting_userinfo_birthday"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1.0"
-                android:background="@drawable/setting_userinfo_text_bg"
                 android:gravity="center"
                 android:text="1989-01-01"
-                android:textColor="@color/blue_2ea6c9"
+                android:textColor="@color/grey_999999"
                 android:textSize="18sp" />
         </LinearLayout>
 
+        <View style="@style/divider_line" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_height="50dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1.0"
                 android:text="@string/setting_userinfo_height"
-                android:textColor="@color/black_000000"
+                android:textColor="@color/grey_666666"
                 android:textSize="18sp" />
 
             <EditText
@@ -117,11 +145,11 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:background="@drawable/setting_userinfo_text_bg"
+                android:background="@null"
                 android:gravity="center"
                 android:inputType="number"
                 android:text="175"
-                android:textColor="@color/blue_2ea6c9"
+                android:textColor="@color/grey_999999"
                 android:textSize="18sp" />
 
             <TextView
@@ -129,22 +157,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:text="@string/setting_userinfo_height_unit"
-                android:textColor="@color/black_000000"
+                android:textColor="@color/grey_999999"
                 android:textSize="14sp" />
         </LinearLayout>
 
+        <View style="@style/divider_line" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_height="50dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1.0"
                 android:text="@string/setting_userinfo_weight"
-                android:textColor="@color/black_000000"
+                android:textColor="@color/grey_666666"
                 android:textSize="18sp" />
 
             <EditText
@@ -152,11 +182,11 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:background="@drawable/setting_userinfo_text_bg"
+                android:background="@null"
                 android:gravity="center"
                 android:inputType="number"
                 android:text="75"
-                android:textColor="@color/blue_2ea6c9"
+                android:textColor="@color/grey_999999"
                 android:textSize="18sp" />
 
             <TextView
@@ -164,29 +194,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:text="@string/setting_userinfo_weight_unit"
-                android:textColor="@color/black_000000"
+                android:textColor="@color/grey_999999"
                 android:textSize="14sp" />
         </LinearLayout>
+
+        <View style="@style/divider_line" />
     </LinearLayout>
 
-    <FrameLayout
+    <Button
+        android:id="@+id/btn_setting_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:paddingBottom="25dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" >
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:background="@color/green_1fbf86"
+        android:gravity="center"
+        android:paddingBottom="12dp"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:paddingTop="12dp"
+        android:text="@string/bind_finish"
+        android:textColor="@color/white_ffffff"
+        android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/btn_setting_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setting_userinfo_next"
-            android:gravity="center"
-            android:text="@string/setting_next"
-            android:textColor="@color/white_ffffff"
-            android:textSize="18sp" />
-    </FrameLayout>
-
-</RelativeLayout>
+</LinearLayout>

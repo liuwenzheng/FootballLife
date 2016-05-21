@@ -14,6 +14,7 @@ buildscript {
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.jakewharton:butterknife:7.0.1'
+    provided 'io.realm:realm-android:0.87.5'
 }
 
 android {

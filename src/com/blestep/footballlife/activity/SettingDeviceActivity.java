@@ -315,7 +315,7 @@ public class SettingDeviceActivity extends BaseActivity implements
 						mDialog.dismiss();
 					}
 					startActivity(new Intent(SettingDeviceActivity.this,
-							SettingBraceletActivity.class));
+							SettingBluetoothActivity.class));
 					SettingDeviceActivity.this.finish();
 				}
 				if (BTConstants.ACTION_DISCOVER_SUCCESS.equals(intent

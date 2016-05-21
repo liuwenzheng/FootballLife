@@ -1,19 +1,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white_ffffff"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="58dp"
-            android:background="@color/grey_f4f4f4" >
+            android:background="@color/grey_f4f4f4">
 
             <ImageView
                 android:id="@+id/id_iv_left"
@@ -38,6 +37,16 @@
                 android:paddingRight="17dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/main_right_button" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/id_iv_right"
+                android:layout_toRightOf="@id/id_iv_left"
+                android:gravity="center"
+                android:text="@string/main_title"
+                android:textColor="@color/black_333333"
+                android:textSize="18sp" />
         </RelativeLayout>
 
         <RadioGroup
@@ -45,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:visibility="gone" >
+            android:visibility="gone">
 
             <RadioButton
                 android:id="@+id/rb_main_tab_step"
@@ -101,17 +110,14 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" >
+            android:layout_weight="1">
 
-            <com.handmark.pulltorefresh.library.extras.PullToRefreshViewPager
-                xmlns:ptr="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/pull_refresh_viewpager"
+            <com.handmark.pulltorefresh.library.PullToRefreshListView
+                android:id="@+id/pull_refresh_list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                ptr:ptrAnimationStyle="flip"
-                ptr:ptrHeaderBackground="@color/white_ffffff"
-                ptr:ptrMode="both" >
-            </com.handmark.pulltorefresh.library.extras.PullToRefreshViewPager>
+                android:cacheColorHint="@android:color/transparent"
+                android:scrollbars="none" />
 
             <TextView
                 android:id="@+id/tv_main_conn_tips"
@@ -140,7 +146,7 @@
     <ScrollView
         android:id="@+id/sv_log"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/log"

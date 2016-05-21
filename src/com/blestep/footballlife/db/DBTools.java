@@ -44,6 +44,10 @@ public class DBTools {
 					.getColumnIndex(DBConstants.STEP_FIELD_DISTANCE));
 			step.calories = cursor.getString(cursor
 					.getColumnIndex(DBConstants.STEP_FIELD_CALORIES));
+			step.speed = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_SPEED));
+			step.power = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_POWER));
 			break;
 		}
 		return step;
@@ -68,6 +72,10 @@ public class DBTools {
 			}
 			step.calories = cursor.getString(cursor
 					.getColumnIndex(DBConstants.STEP_FIELD_CALORIES));
+			step.speed = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_SPEED));
+			step.power = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_POWER));
 			steps.add(step);
 		}
 		return steps;
@@ -100,6 +108,8 @@ public class DBTools {
 		cv.put(DBConstants.STEP_FIELD_DURATION, step.duration);
 		cv.put(DBConstants.STEP_FIELD_DISTANCE, step.distance);
 		cv.put(DBConstants.STEP_FIELD_CALORIES, step.calories);
+		cv.put(DBConstants.STEP_FIELD_SPEED, step.speed);
+		cv.put(DBConstants.STEP_FIELD_POWER, step.power);
 		long row = db.insert(DBConstants.TABLE_NAME_STEP, null, cv);
 		return row;
 	}
@@ -148,6 +158,8 @@ public class DBTools {
 		cv.put(DBConstants.STEP_FIELD_DURATION, step.duration);
 		cv.put(DBConstants.STEP_FIELD_DISTANCE, step.distance);
 		cv.put(DBConstants.STEP_FIELD_CALORIES, step.calories);
+		cv.put(DBConstants.STEP_FIELD_SPEED, step.speed);
+		cv.put(DBConstants.STEP_FIELD_POWER, step.power);
 		db.update(DBConstants.TABLE_NAME_STEP, cv, where, whereValue);
 	}
 

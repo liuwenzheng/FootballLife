@@ -129,6 +129,7 @@ public class MenuLeftFragment extends Fragment implements OnClickListener {
         mView.findViewById(R.id.rl_bracelet_reset).setOnClickListener(this);
         mView.findViewById(R.id.rl_about).setOnClickListener(this);
         mView.findViewById(R.id.rl_center_clear).setOnClickListener(this);
+        mView.findViewById(R.id.rl_param).setOnClickListener(this);
     }
 
     private void initData() {
@@ -212,7 +213,9 @@ public class MenuLeftFragment extends Fragment implements OnClickListener {
             case R.id.rl_center_clear:
                 startActivity(new Intent(mainActivity, ClearDataActivity.class));
                 break;
-
+            case R.id.rl_param:
+                startActivity(new Intent(mainActivity, ParamActivity.class));
+                break;
             default:
                 break;
         }
