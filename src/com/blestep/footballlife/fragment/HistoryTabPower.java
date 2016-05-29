@@ -1,12 +1,5 @@
 package com.blestep.footballlife.fragment;
 
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
-
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -31,16 +24,23 @@ import com.db.chart.view.BarChartView;
 import com.db.chart.view.XController;
 import com.db.chart.view.YController;
 
-public class HistoryTab03 extends Fragment implements OnEntryClickListener {
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class HistoryTabPower extends Fragment implements OnEntryClickListener {
 	private String mLabels[];
 	private String mValues[];
-	private int BAR_DISTANCE_MAX = 1;
+	private int BAR_POWER_MAX = 1;
 	// private int BAR_STEP_AIM = 0;
 	private ArrayList<Step> mSteps;
 	private ArrayList<Step> mStepsSort;
 	private SimpleDateFormat mSdf;
 	private Calendar mCalendar;
-	private TextView tv_history_distance_daily, tv_history_distance_sum;
+	private TextView tv_history_power_daily, tv_history_power_sum;
 
 	private static Runnable mEndAction = new Runnable() {
 		@Override
@@ -51,7 +51,7 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 
 	private View mView;
 	private HistoryActivity mActivity;
-	private BarChartView bcv_distance;
+	private BarChartView bcv_power;
 	private TextView mBarTooltip;
 
 	@Override
@@ -76,7 +76,7 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		mView = inflater.inflate(R.layout.history_tab_03, container, false);
+		mView = inflater.inflate(R.layout.history_tab_power, container, false);
 		initView();
 		initData();
 		return mView;
@@ -93,9 +93,8 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 		mStepsSort = new ArrayList<Step>();
 		mStepsSort.addAll(mSteps);
 		Collections.sort(mStepsSort, new StepCompare());
-		if (Float.valueOf(mStepsSort.get(0).distance) >= BAR_DISTANCE_MAX) {
-			BAR_DISTANCE_MAX = Float.valueOf(mStepsSort.get(0).distance)
-					.intValue() + 1;
+		if (Float.valueOf(mStepsSort.get(0).power) >= BAR_POWER_MAX) {
+			BAR_POWER_MAX = Float.valueOf(mStepsSort.get(0).power).intValue() + 1;
 		}
 		// else {
 		// BAR_STEP_MAX = BAR_STEP_AIM;
@@ -124,22 +123,22 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 				stepSum += Float.valueOf(mValues[i]);
 			}
 		}
-		tv_history_distance_sum.setText(new BigDecimal(stepSum).setScale(2,
+		tv_history_power_sum.setText(new BigDecimal(stepSum).setScale(2,
 				BigDecimal.ROUND_HALF_UP).floatValue()
 				+ "");
-		tv_history_distance_daily.setText(new BigDecimal(stepSum
+		tv_history_power_daily.setText(new BigDecimal(stepSum
 				/ mValues.length).setScale(2, BigDecimal.ROUND_HALF_UP)
 				.floatValue() + "");
 
 	}
 
 	private void initView() {
-		bcv_distance = (BarChartView) mView.findViewById(R.id.bcv_distance);
-		tv_history_distance_daily = (TextView) mView
-				.findViewById(R.id.tv_history_distance_daily);
-		tv_history_distance_sum = (TextView) mView
-				.findViewById(R.id.tv_history_distance_sum);
-		bcv_distance.setOnEntryClickListener(this);
+		bcv_power = (BarChartView) mView.findViewById(R.id.bcv_power);
+		tv_history_power_daily = (TextView) mView
+				.findViewById(R.id.tv_history_power_daily);
+		tv_history_power_sum = (TextView) mView
+				.findViewById(R.id.tv_history_power_sum);
+		bcv_power.setOnEntryClickListener(this);
 	}
 
 	@Override
@@ -152,7 +151,7 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 	}
 
 	public void updateBarChart(int nPoints) {
-		bcv_distance.reset();
+		bcv_power.reset();
 		BarSet data = new BarSet();
 		int index = mSteps.size();
 		int start = 0;
@@ -170,12 +169,12 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 			} else {
 				if (index < nPoints) {
 					bar = new Bar(mLabels[j], Float.valueOf(mSteps.get(j
-							- start).distance));
-					mValues[j] = mSteps.get(j - start).distance;
+							- start).power));
+					mValues[j] = mSteps.get(j - start).power;
 				} else {
 					bar = new Bar(mLabels[j], Float.valueOf(mSteps.get(j
-							+ start).distance));
-					mValues[j] = mSteps.get(j + start).distance;
+							+ start).power));
+					mValues[j] = mSteps.get(j + start).power;
 				}
 			}
 			data.addBar(bar);
@@ -188,19 +187,19 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 		// data.addBar(bar);
 		// }
 		data.setColor(getResources().getColor(R.color.blue_b4efff));
-		bcv_distance.addData(data);
+		bcv_power.addData(data);
 
-		bcv_distance.setBarSpacing((int) Tools.fromDpToPx(50));
-		bcv_distance.setSetSpacing(0);
-		bcv_distance.setBarBackground(false);
-		bcv_distance.setRoundCorners(0);
+		bcv_power.setBarSpacing((int) Tools.fromDpToPx(50));
+		bcv_power.setSetSpacing(0);
+		bcv_power.setBarBackground(false);
+		bcv_power.setRoundCorners(0);
 		// 运动目标值
-		// bcv_distance.setmThresholdText(BAR_STEP_AIM + "");
-		bcv_distance.setBorderSpacing(0).setGrid(null).setHorizontalGrid(null)
+		// bcv_power.setmThresholdText(BAR_STEP_AIM + "");
+		bcv_power.setBorderSpacing(0).setGrid(null).setHorizontalGrid(null)
 				.setVerticalGrid(null)
 				.setYLabels(YController.LabelPosition.NONE).setYAxis(false)
 				.setXLabels(XController.LabelPosition.OUTSIDE).setXAxis(true)
-				.setMaxAxisValue(BAR_DISTANCE_MAX, 1)
+				.setMaxAxisValue(BAR_POWER_MAX, 1)
 				// .setThresholdLine(BAR_STEP_AIM, DataRetriever.randPaint())
 				.animate(DataRetriever.randAnimation(mEndAction, nPoints));
 	}
@@ -217,13 +216,13 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 		layoutParams.topMargin = rect.top - (int) Tools.fromDpToPx(20);
 		mBarTooltip.setLayoutParams(layoutParams);
 
-		bcv_distance.showTooltip(mBarTooltip);
-		bcv_distance.invalidate();
+		bcv_power.showTooltip(mBarTooltip);
+		bcv_power.invalidate();
 	}
 
 	private void dismissBarTooltip(final int index, final Rect rect) {
 
-		bcv_distance.dismissTooltip(mBarTooltip);
+		bcv_power.dismissTooltip(mBarTooltip);
 
 		mBarTooltip = null;
 		if (index != -1)
@@ -234,10 +233,10 @@ public class HistoryTab03 extends Fragment implements OnEntryClickListener {
 
 		@Override
 		public int compare(Step lhs, Step rhs) {
-			if (Float.valueOf(lhs.distance) > Float.valueOf(rhs.distance)) {
+			if (Float.valueOf(lhs.power) > Float.valueOf(rhs.power)) {
 				return -1;
-			} else if (Float.valueOf(lhs.distance) < Float
-					.valueOf(rhs.distance)) {
+			} else if (Float.valueOf(lhs.power) < Float
+					.valueOf(rhs.power)) {
 				return 1;
 			}
 			return 0;

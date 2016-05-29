@@ -48,6 +48,12 @@ public class DBTools {
 					.getColumnIndex(DBConstants.STEP_FIELD_SPEED));
 			step.power = cursor.getString(cursor
 					.getColumnIndex(DBConstants.STEP_FIELD_POWER));
+			step.explosive = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_EXPLOSIVE));
+			step.endurance = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_ENDURANCE));
+			step.spirit = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_SPIRIT));
 			break;
 		}
 		return step;
@@ -76,6 +82,12 @@ public class DBTools {
 					.getColumnIndex(DBConstants.STEP_FIELD_SPEED));
 			step.power = cursor.getString(cursor
 					.getColumnIndex(DBConstants.STEP_FIELD_POWER));
+			step.explosive = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_EXPLOSIVE));
+			step.endurance = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_ENDURANCE));
+			step.spirit = cursor.getString(cursor
+					.getColumnIndex(DBConstants.STEP_FIELD_SPIRIT));
 			steps.add(step);
 		}
 		return steps;
@@ -110,6 +122,9 @@ public class DBTools {
 		cv.put(DBConstants.STEP_FIELD_CALORIES, step.calories);
 		cv.put(DBConstants.STEP_FIELD_SPEED, step.speed);
 		cv.put(DBConstants.STEP_FIELD_POWER, step.power);
+		cv.put(DBConstants.STEP_FIELD_EXPLOSIVE, step.explosive);
+		cv.put(DBConstants.STEP_FIELD_ENDURANCE, step.endurance);
+		cv.put(DBConstants.STEP_FIELD_SPIRIT, step.spirit);
 		long row = db.insert(DBConstants.TABLE_NAME_STEP, null, cv);
 		return row;
 	}
@@ -160,6 +175,9 @@ public class DBTools {
 		cv.put(DBConstants.STEP_FIELD_CALORIES, step.calories);
 		cv.put(DBConstants.STEP_FIELD_SPEED, step.speed);
 		cv.put(DBConstants.STEP_FIELD_POWER, step.power);
+		cv.put(DBConstants.STEP_FIELD_EXPLOSIVE, step.explosive);
+		cv.put(DBConstants.STEP_FIELD_ENDURANCE, step.endurance);
+		cv.put(DBConstants.STEP_FIELD_SPIRIT, step.spirit);
 		db.update(DBConstants.TABLE_NAME_STEP, cv, where, whereValue);
 	}
 

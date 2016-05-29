@@ -11,6 +11,9 @@ public class DBConstants {
 	public static final String STEP_FIELD_CALORIES = "calories";
 	public static final String STEP_FIELD_SPEED = "speed";
 	public static final String STEP_FIELD_POWER = "power";
+	public static final String STEP_FIELD_EXPLOSIVE = "explosive";
+	public static final String STEP_FIELD_ENDURANCE = "endurance";
+	public static final String STEP_FIELD_SPIRIT = "spirit";
 	// 闹钟
 	public static final String TABLE_NAME_ALARM = "alarm";
 	public static final String ALARM_FIELD_ID = "id";

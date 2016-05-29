@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_ffffff"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_history_back"
@@ -17,10 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:visibility="visible" >
+        android:visibility="visible">
 
         <RadioButton
-            android:id="@+id/rb_history_tab_step"
+            android:id="@+id/rb_history_tab_power"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:button="@null"
@@ -28,10 +28,13 @@
             android:drawableBottom="@drawable/main_tab_selector"
             android:drawablePadding="5dp"
             android:gravity="left|center_vertical"
-            android:padding="17dp"
-            android:text="@string/history_step"
+            android:paddingBottom="17dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="17dp"
+            android:text="@string/history_power"
             android:textColor="@drawable/main_tab_text_selector"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
 
         <View
             android:layout_width="0dp"
@@ -39,17 +42,62 @@
             android:layout_weight="1.0" />
 
         <RadioButton
-            android:id="@+id/rb_history_tab_calorie"
+            android:id="@+id/rb_history_tab_explosive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:button="@null"
             android:drawableBottom="@drawable/main_tab_selector"
             android:drawablePadding="5dp"
-            android:gravity="center"
-            android:padding="17dp"
-            android:text="@string/history_calorie"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="17dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="17dp"
+            android:text="@string/history_explosive"
             android:textColor="@drawable/main_tab_text_selector"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1.0" />
+
+        <RadioButton
+            android:id="@+id/rb_history_tab_endurance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableBottom="@drawable/main_tab_selector"
+            android:drawablePadding="5dp"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="17dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="17dp"
+            android:text="@string/history_endurance"
+            android:textColor="@drawable/main_tab_text_selector"
+            android:textSize="17sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1.0" />
+
+        <RadioButton
+            android:id="@+id/rb_history_tab_spirit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableBottom="@drawable/main_tab_selector"
+            android:drawablePadding="5dp"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="17dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="17dp"
+            android:text="@string/history_spirit"
+            android:textColor="@drawable/main_tab_text_selector"
+            android:textSize="17sp" />
 
         <View
             android:layout_width="0dp"
@@ -64,17 +112,42 @@
             android:drawableBottom="@drawable/main_tab_selector"
             android:drawablePadding="5dp"
             android:gravity="right|center_vertical"
-            android:padding="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="17dp"
             android:text="@string/history_distance"
             android:textColor="@drawable/main_tab_text_selector"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1.0" />
+
+        <RadioButton
+            android:id="@+id/rb_history_tab_calorie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableBottom="@drawable/main_tab_selector"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:paddingBottom="17dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="17dp"
+            android:text="@string/history_calorie"
+            android:textColor="@drawable/main_tab_text_selector"
+            android:textSize="17sp" />
+
+
     </RadioGroup>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_history"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.0" >
-    </android.support.v4.view.ViewPager>
+        android:layout_weight="1.0"></android.support.v4.view.ViewPager>
 
 </LinearLayout>

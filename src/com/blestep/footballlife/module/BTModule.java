@@ -1,5 +1,6 @@
 package com.blestep.footballlife.module;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -451,8 +452,10 @@ public class BTModule {
                 intent.putExtra("log", "时长：" + duration);
                 context.sendBroadcast(intent);
 
-                String distance = new DecimalFormat().format(Integer.valueOf(Utils
-                        .decodeToString(distance1 + distance0)) * 0.1);
+//                String distance = new DecimalFormat().format(Integer.valueOf(Utils
+//                        .decodeToString(distance1 + distance0)) * 0.1);
+
+                String distance = new BigDecimal(Integer.valueOf(count) * 0.75 / 1000).setScale(2, BigDecimal.ROUND_HALF_UP).floatValue() + "";
                 LogModule.e("距离：" + distance);
                 intent.putExtra("log", "距离：" + distance);
                 context.sendBroadcast(intent);
@@ -479,6 +482,18 @@ public class BTModule {
                 } else {
                     step.power = "0";
                 }
+                if (!"0".equals(step.power) && !"0".equals(step.speed)) {
+                    step.explosive = SportDataUtils.getExplosive(Float.valueOf(step.power), Float.valueOf(step.speed)) + "";
+                } else {
+                    step.explosive = "0";
+                }
+                if (Float.valueOf(distance) != 0 && Integer.valueOf(duration) != 0) {
+                    step.endurance = SportDataUtils.getEndurance(Float.valueOf(distance), Float.valueOf(duration)) + "";
+                } else {
+                    step.endurance = "0";
+                }
+                step.spirit = SportDataUtils.getSpirit(Float.valueOf(step.speed), Float.valueOf(step.power), Float.valueOf(step.explosive), Float.valueOf(step.endurance)) + "";
+
                 if (!DBTools.getInstance(context).isStepExist(step.date)) {
                     DBTools.getInstance(context).insertStep(step);
                     // 更新最新记录

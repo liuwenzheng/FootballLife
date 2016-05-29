@@ -1,8 +1,5 @@
 package com.blestep.footballlife.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -19,142 +16,171 @@ import com.blestep.footballlife.BTConstants;
 import com.blestep.footballlife.R;
 import com.blestep.footballlife.db.DBTools;
 import com.blestep.footballlife.entity.Step;
-import com.blestep.footballlife.fragment.HistoryTab01;
-import com.blestep.footballlife.fragment.HistoryTab02;
-import com.blestep.footballlife.fragment.HistoryTab03;
+import com.blestep.footballlife.fragment.HistoryTabCalorie;
+import com.blestep.footballlife.fragment.HistoryTabDistance;
+import com.blestep.footballlife.fragment.HistoryTabEndurance;
+import com.blestep.footballlife.fragment.HistoryTabExplosive;
+import com.blestep.footballlife.fragment.HistoryTabPower;
+import com.blestep.footballlife.fragment.HistoryTabSpirit;
 import com.umeng.analytics.MobclickAgent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HistoryActivity extends FragmentActivity implements
-		OnClickListener, OnPageChangeListener, OnCheckedChangeListener {
-	private ViewPager vp_history;
-	private FragmentPagerAdapter mAdapter;
-	private List<Fragment> mFragments = new ArrayList<Fragment>();
-	private HistoryTab01 tab01;
-	private HistoryTab02 tab02;
-	private HistoryTab03 tab03;
+        OnClickListener, OnPageChangeListener, OnCheckedChangeListener {
+    private ViewPager vp_history;
+    private FragmentPagerAdapter mAdapter;
+    private List<Fragment> mFragments = new ArrayList<Fragment>();
+    private HistoryTabPower tabPower;
+    private HistoryTabExplosive tabExplosive;
+    private HistoryTabEndurance tabEndurance;
+    private HistoryTabSpirit tabSpirit;
+    private HistoryTabCalorie tabCalorie;
+    private HistoryTabDistance tabDistance;
 
-	private RadioGroup rg_history_tab;
+    private RadioGroup rg_history_tab;
 
-	private ArrayList<Step> mSteps;
+    private ArrayList<Step> mSteps;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.history_page);
-		initView();
-		initListener();
-		initData();
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.history_page);
+        initView();
+        initListener();
+        initData();
+    }
 
-	private void initView() {
-		vp_history = (ViewPager) findViewById(R.id.vp_history);
-		rg_history_tab = (RadioGroup) findViewById(R.id.rg_history_tab);
-		initViewPager();
-	}
+    private void initView() {
+        vp_history = (ViewPager) findViewById(R.id.vp_history);
+        vp_history.setOffscreenPageLimit(6);
+        rg_history_tab = (RadioGroup) findViewById(R.id.rg_history_tab);
+        initViewPager();
+    }
 
-	private void initListener() {
-		vp_history.setOnPageChangeListener(this);
-		rg_history_tab.setOnCheckedChangeListener(this);
-		findViewById(R.id.tv_history_back).setOnClickListener(this);
-	}
+    private void initListener() {
+        vp_history.setOnPageChangeListener(this);
+        rg_history_tab.setOnCheckedChangeListener(this);
+        findViewById(R.id.tv_history_back).setOnClickListener(this);
+    }
 
-	private void initData() {
-	}
+    private void initData() {
+    }
 
-	private void initViewPager() {
-		mSteps = DBTools.getInstance(this).selectAllStep();
-		Bundle bundle = new Bundle();
-		bundle.putSerializable(BTConstants.EXTRA_KEY_HISTORY, mSteps);
-		tab01 = new HistoryTab01();
-		tab02 = new HistoryTab02();
-		tab03 = new HistoryTab03();
+    private void initViewPager() {
+        mSteps = DBTools.getInstance(this).selectAllStep();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(BTConstants.EXTRA_KEY_HISTORY, mSteps);
+        tabPower = new HistoryTabPower();
+        tabExplosive = new HistoryTabExplosive();
+        tabEndurance = new HistoryTabEndurance();
+        tabSpirit = new HistoryTabSpirit();
+        tabDistance = new HistoryTabDistance();
+        tabCalorie = new HistoryTabCalorie();
 
-		tab01.setArguments(bundle);
-		tab02.setArguments(bundle);
-		tab03.setArguments(bundle);
+        tabPower.setArguments(bundle);
+        tabExplosive.setArguments(bundle);
+        tabEndurance.setArguments(bundle);
+        tabSpirit.setArguments(bundle);
+        tabDistance.setArguments(bundle);
+        tabCalorie.setArguments(bundle);
 
-		mFragments.add(tab01);
-		mFragments.add(tab02);
-		mFragments.add(tab03);
-		/**
-		 * 初始化Adapter
-		 */
-		mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
-			@Override
-			public int getCount() {
-				return mFragments.size();
-			}
+        mFragments.add(tabPower);
+        mFragments.add(tabExplosive);
+        mFragments.add(tabEndurance);
+        mFragments.add(tabSpirit);
+        mFragments.add(tabDistance);
+        mFragments.add(tabCalorie);
+        /**
+         * 初始化Adapter
+         */
+        mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public int getCount() {
+                return mFragments.size();
+            }
 
-			@Override
-			public Fragment getItem(int arg0) {
-				return mFragments.get(arg0);
-			}
-		};
-		vp_history.setAdapter(mAdapter);
-	}
+            @Override
+            public Fragment getItem(int arg0) {
+                return mFragments.get(arg0);
+            }
+        };
+        vp_history.setAdapter(mAdapter);
+    }
 
-	@Override
-	public void onClick(final View v) {
-		switch (v.getId()) {
-		case R.id.tv_history_back:
-			finish();
-			overridePendingTransition(R.anim.page_up_in, R.anim.page_down_out);
-			break;
+    @Override
+    public void onClick(final View v) {
+        switch (v.getId()) {
+            case R.id.tv_history_back:
+                finish();
+                overridePendingTransition(R.anim.page_up_in, R.anim.page_down_out);
+                break;
 
-		default:
-			break;
-		}
-	}
+            default:
+                break;
+        }
+    }
 
-	@Override
-	public void onCheckedChanged(RadioGroup group, int checkedId) {
-		switch (checkedId) {
-		case R.id.rb_history_tab_step:
-			vp_history.setCurrentItem(0);
-			break;
-		case R.id.rb_history_tab_calorie:
-			vp_history.setCurrentItem(1);
-			break;
-		case R.id.rb_history_tab_distance:
-			vp_history.setCurrentItem(2);
-			break;
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (checkedId) {
+            case R.id.rb_history_tab_power:
+                vp_history.setCurrentItem(0);
+                break;
+            case R.id.rb_history_tab_explosive:
+                vp_history.setCurrentItem(1);
+                break;
+            case R.id.rb_history_tab_endurance:
+                vp_history.setCurrentItem(2);
+                break;
+            case R.id.rb_history_tab_spirit:
+                vp_history.setCurrentItem(3);
+                break;
+            case R.id.rb_history_tab_distance:
+                vp_history.setCurrentItem(4);
+                break;
+            case R.id.rb_history_tab_calorie:
+                vp_history.setCurrentItem(5);
+                break;
 
-		default:
-			break;
-		}
-	}
+            default:
+                break;
+        }
+    }
 
-	@Override
-	public void onBackPressed() {
+    @Override
+    public void onBackPressed() {
 
-		super.onBackPressed();
-		overridePendingTransition(R.anim.page_up_in, R.anim.page_down_out);
-	}
+        super.onBackPressed();
+        overridePendingTransition(R.anim.page_up_in, R.anim.page_down_out);
+    }
 
-	@Override
-	public void onPageScrollStateChanged(int arg0) {
+    @Override
+    public void onPageScrollStateChanged(int arg0) {
 
-	}
+    }
 
-	@Override
-	public void onPageScrolled(int arg0, float arg1, int arg2) {
+    @Override
+    public void onPageScrolled(int arg0, float arg1, int arg2) {
 
-	}
+    }
 
-	@Override
-	public void onPageSelected(int position) {
-		((RadioButton) rg_history_tab.getChildAt(position * 2))
-				.setChecked(true);
-	}
-	@Override
-	protected void onResume() {
-		super.onResume();
-		MobclickAgent.onResume(this);
-	}
+    @Override
+    public void onPageSelected(int position) {
+        ((RadioButton) rg_history_tab.getChildAt(position * 2))
+                .setChecked(true);
+    }
 
-	@Override
-	protected void onPause() {
-		super.onPause();
-		MobclickAgent.onPause(this);
-	}
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
 }

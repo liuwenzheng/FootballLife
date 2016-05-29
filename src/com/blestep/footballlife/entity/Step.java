@@ -14,4 +14,7 @@ public class Step implements Serializable {
 	public String calories;
 	public String speed;
 	public String power;
+	public String explosive;
+	public String endurance;
+	public String spirit;
 }

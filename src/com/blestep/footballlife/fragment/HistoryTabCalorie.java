@@ -30,7 +30,7 @@ import com.db.chart.view.BarChartView;
 import com.db.chart.view.XController;
 import com.db.chart.view.YController;
 
-public class HistoryTab02 extends Fragment implements OnEntryClickListener {
+public class HistoryTabCalorie extends Fragment implements OnEntryClickListener {
 	private String mLabels[];
 	private String mValues[];
 	private int BAR_CALORIE_MAX = 100;
@@ -75,7 +75,7 @@ public class HistoryTab02 extends Fragment implements OnEntryClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		mView = inflater.inflate(R.layout.history_tab_02, container, false);
+		mView = inflater.inflate(R.layout.history_tab_calorie, container, false);
 		initView();
 		initData();
 		return mView;
