@@ -10,17 +10,17 @@ import java.math.BigDecimal;
  * Created by lwz on 2016/5/14 0014.
  */
 public class SportDataUtils {
-    public static final int MAX_STEP = 15000;
-    public static final int MAX_DISTANCE = 20000;
-    public static final int MAX_CALORIE = 3000;
-    public static final float MAX_BMI = 125;
-    public static final float MAX_BFR = 167.6f;
-    public static final float MAX_BMR = 447;
-    public static final float MAX_SPEED = 40;
-    public static final float MAX_POWER = 1387;
-    public static final float MAX_EXPLOSIVE = 15395;
-    public static final float MAX_ENDURANCE = 40000;
-    public static final float MAX_SPIRIT = 56782;
+    public static int MAX_STEP = 15000;
+    public static int MAX_DISTANCE = 8000;
+    public static int MAX_CALORIE = 3000;
+    public static float MAX_BMI = 125;
+    public static float MAX_BFR = 167.6f;
+    public static float MAX_BMR = 447;
+    public static float MAX_SPEED = 40;
+    public static float MAX_POWER = 1387;
+    public static float MAX_EXPLOSIVE = 5395;
+    public static float MAX_ENDURANCE = 10000;
+    public static float MAX_SPIRIT = 20000;
 
     public static float speed_factor = 1.0f;
 

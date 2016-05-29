@@ -1,7 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -143,6 +142,7 @@
         </RelativeLayout>
     </LinearLayout>
 
+
     <ScrollView
         android:id="@+id/sv_log"
         android:layout_width="match_parent"
@@ -155,4 +155,17 @@
             android:text="" />
     </ScrollView>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btn_step_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/step_bottom_history"
+        android:gravity="center_horizontal|bottom"
+        android:paddingBottom="2dp"
+        android:text="@string/step_history"
+        android:textColor="@color/white_ffffff"
+        android:textSize="14sp"
+        android:visibility="visible" />
+</RelativeLayout>

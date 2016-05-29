@@ -405,6 +405,9 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
             case 4:
                 view.layout(x - 10 - width, y - height / 2, x - 10, y + height / 2);
                 break;
+            case 5:
+                view.layout(0, 0, width, height);
+                break;
         }
     }
 }

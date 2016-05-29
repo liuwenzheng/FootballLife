@@ -23,6 +23,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -42,6 +43,7 @@ import com.blestep.footballlife.service.BTService.LocalBinder;
 import com.blestep.footballlife.utils.SPUtiles;
 import com.blestep.footballlife.utils.SportDataUtils;
 import com.blestep.footballlife.utils.ToastUtils;
+import com.blestep.footballlife.utils.Utils;
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
@@ -58,7 +60,10 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.umeng.analytics.MobclickAgent;
 
+import org.w3c.dom.Text;
+
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends SlidingFragmentActivity implements
         OnClickListener {
@@ -89,6 +94,7 @@ public class MainActivity extends SlidingFragmentActivity implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         initView();
         initListener();
         // 注册广播接收器
@@ -563,6 +569,12 @@ public class MainActivity extends SlidingFragmentActivity implements
         radarChart.addView(LayoutInflater.from(this).inflate(R.layout.radar_endurance, radarChart, false));
         radarChart.addView(LayoutInflater.from(this).inflate(R.layout.radar_spirit, radarChart, false));
         radarChart.addView(LayoutInflater.from(this).inflate(R.layout.radar_power, radarChart, false));
+        TextView textView = new TextView(this);
+        textView.setText("测试版");
+        textView.setTextSize(Utils.dip2px(this, 15));
+        textView.setTextColor(getResources().getColor(R.color.white_ffffff));
+        textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        radarChart.addView(textView);
         lv_refresh.addHeaderView(view);
     }
 
@@ -731,7 +743,7 @@ public class MainActivity extends SlidingFragmentActivity implements
         item.iconId = R.drawable.ic_sport_speed;
         item.name = getString(R.string.speed);
         item.maxValue = SportDataUtils.MAX_SPEED;
-        item.showValue = (int) speed + "";
+        item.showValue = speed + "";
         item.value = speed > SportDataUtils.MAX_SPEED ? SportDataUtils.MAX_SPEED : speed;
         items.add(item);
     }
@@ -774,5 +786,11 @@ public class MainActivity extends SlidingFragmentActivity implements
         item.showValue = (int) spirit + "";
         item.value = spirit > SportDataUtils.MAX_SPIRIT ? SportDataUtils.MAX_SPIRIT : spirit;
         items.add(item);
+    }
+
+    @OnClick(R.id.btn_step_history)
+    public void onClick() {
+        startActivity(new Intent(this, HistoryActivity.class));
+        this.overridePendingTransition(R.anim.page_down_in, R.anim.page_up_out);
     }
 }
