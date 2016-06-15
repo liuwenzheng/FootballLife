@@ -332,7 +332,8 @@
         android:paddingBottom="20dp"
         android:paddingLeft="17dp"
         android:paddingRight="17dp"
-        android:paddingTop="20dp">
+        android:paddingTop="20dp"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -342,5 +343,6 @@
             android:textSize="18sp" />
     </RelativeLayout>
 
-    <View style="@style/divider_line" />
+    <View style="@style/divider_line"
+        android:visibility="gone"/>
 </LinearLayout>

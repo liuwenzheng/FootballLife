@@ -22,7 +22,7 @@ public class SportDataUtils {
     public static float MAX_ENDURANCE = 10000;
     public static float MAX_SPIRIT = 20000;
 
-    public static float speed_factor = 1.0f;
+    public static float speed_factor = 4.1f;
 
     // km/h
     public static float getSpeed(float distance, float duration) {

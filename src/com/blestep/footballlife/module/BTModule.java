@@ -488,7 +488,7 @@ public class BTModule {
                     step.explosive = "0";
                 }
                 if (Float.valueOf(distance) != 0 && Integer.valueOf(duration) != 0) {
-                    step.endurance = SportDataUtils.getEndurance(Float.valueOf(distance), Float.valueOf(duration)) + "";
+                    step.endurance = SportDataUtils.getEndurance(Float.valueOf(distance) * 1000, Float.valueOf(duration)) + "";
                 } else {
                     step.endurance = "0";
                 }

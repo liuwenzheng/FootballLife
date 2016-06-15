@@ -569,12 +569,12 @@ public class MainActivity extends SlidingFragmentActivity implements
         radarChart.addView(LayoutInflater.from(this).inflate(R.layout.radar_endurance, radarChart, false));
         radarChart.addView(LayoutInflater.from(this).inflate(R.layout.radar_spirit, radarChart, false));
         radarChart.addView(LayoutInflater.from(this).inflate(R.layout.radar_power, radarChart, false));
-        TextView textView = new TextView(this);
-        textView.setText("测试版");
-        textView.setTextSize(Utils.dip2px(this, 15));
-        textView.setTextColor(getResources().getColor(R.color.white_ffffff));
-        textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        radarChart.addView(textView);
+//        TextView textView = new TextView(this);
+//        textView.setText("测试版");
+//        textView.setTextSize(Utils.dip2px(this, 15));
+//        textView.setTextColor(getResources().getColor(R.color.white_ffffff));
+//        textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//        radarChart.addView(textView);
         lv_refresh.addHeaderView(view);
     }
 
